@@ -34,7 +34,7 @@ seekstorm_client_py is open source licensed under the [Apache License 2.0](https
   <a href="https://seekstorm.com">Website</a> | 
   <a href="https://seekstorm.github.io/search-benchmark-game/">Benchmark</a> | 
   <a href="https://deephn.org/">Demo</a> | 
-  <a href="https://github.com/SeekStorm/SeekStorm">Repository for SeekStorm Python client </a> | 
+  <a href="https://github.com/SeekStorm/seekstorm_client_py">Repository for SeekStorm Python client </a> | 
   <a href="https://github.com/SeekStorm/SeekStorm">Repository for SeekStorm library, server, Rust client </a> | 
   <a href="https://github.com/SeekStorm/SeekStorm#roadmap">Roadmap</a> | 
   <a href="https://seekstorm.com/blog/">Blog</a> | 
