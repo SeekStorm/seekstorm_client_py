@@ -1,0 +1,4 @@
+/target/
+/.VSCodeCounter
+/tests/index_test/
+/.local/
