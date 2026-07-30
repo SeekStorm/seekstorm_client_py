@@ -1,2 +1,6 @@
 /target/
 /.local/
+/.venv/
+/.vscode/
+__pycache__/
+*.py[cod]
