@@ -1,7 +1,0 @@
-{
-    "rust-analyzer.linkedProjects": [
-        ".\\Cargo.toml"
-    ],
-    "rust-analyzer.showUnlinkedFileNotification": false,
-    "lldb.launch.env": { "_NO_DEBUG_HEAP": "1" }
-}
