@@ -2,7 +2,7 @@
 <img src="assets/logo.png" width="450" alt="Logo"><br>
 **Python client** for the **SeekStorm vector & lexical search server**.
 
-SeekStorm is open source licensed under the [Apache License 2.0](https://github.com/SeekStorm/SeekStorm?tab=Apache-2.0-1-ov-file#readme)
+seekstorm_client_py is open source licensed under the [Apache License 2.0](https://github.com/SeekStorm/seekstorm_client_py?tab=Apache-2.0-1-ov-file#readme)
 
 ## SeekStorm REST client (Python)
 [![Crates.io](https://img.shields.io/crates/v/seekstorm_client_py.svg)](https://crates.io/crates/seekstorm_client_py)
