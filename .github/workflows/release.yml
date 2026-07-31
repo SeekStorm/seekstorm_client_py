@@ -31,6 +31,7 @@ jobs:
   linux_aarch64:
     runs-on: ubuntu-24.04-arm
     continue-on-error: true
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -70,7 +71,9 @@ jobs:
           path: dist
 
   macos_x86_64:
-    runs-on: macos-13
+    runs-on: macos-15-intel
+    continue-on-error: true
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -90,6 +93,7 @@ jobs:
   macos_aarch64:
     runs-on: macos-14
     continue-on-error: true
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -124,13 +128,23 @@ jobs:
   release:
     name: Release to PyPI
     runs-on: ubuntu-latest
-    if: "github.event_name == 'release' && github.event.action == 'published'"
-    needs: [linux_x86_64, windows, sdist]
+    environment: 'pypi' # Fixt den Parser-Fehler
+    # Der Job startet, sobald die stabilen Jobs durch sind UND die optionalen Jobs beendet sind (egal ob Erfolg oder Fehlschlag)
+    needs: [linux_x86_64, linux_aarch64, windows, macos_x86_64, macos_aarch64, sdist]
+    if: |
+      always() &&
+      github.event_name == 'release' && 
+      github.event.action == 'published' &&
+      contains(needs.*.result, 'success') &&
+      !contains(needs.linux_x86_64.result, 'failure') &&
+      !contains(needs.windows.result, 'failure') &&
+      !contains(needs.sdist.result, 'failure')
     permissions:
-      id-token: write # Required for secure trusted publishing if configured
+      id-token: write 
       contents: read
     steps:
-      - uses: actions/download-artifact@v5
+      - name: Download all artifacts
+        uses: actions/download-artifact@v5
         with:
           pattern: wheels-*
           merge-multiple: true
@@ -139,3 +153,4 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           print-hash: true
+

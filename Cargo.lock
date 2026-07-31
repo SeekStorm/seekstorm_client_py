@@ -2518,7 +2518,7 @@ dependencies = [
 
 [[package]]
 name = "seekstorm_client_py"
-version = "0.1.3"
+version = "0.1.4"
 dependencies = [
  "pyo3",
  "seekstorm_client_rs",
