@@ -1,6 +1,14 @@
 [package]
 name = "seekstorm_client_py"
 version = "0.1.4"
+authors = ["Wolf Garbe <wolf.garbe@seekstorm.com>"]
+license = "Apache-2.0"
+categories = ["database-implementations", "data-structures"]
+description = "Python bindings for the SeekStorm REST client"
+homepage = "https://seekstorm.com"
+repository = "https://github.com/SeekStorm/seekstorm_client_py"
+readme = "README.md"
+keywords = ["search", "information", "retrieval"]
 edition = "2024"
 
 [lib]
