@@ -43,14 +43,19 @@ seekstorm_client_py is open source licensed under the [Apache License 2.0](https
 
 ## Usage of the Python client
 
+Install seekstorm-client-py
+```shell
+pip install seekstorm-client-py
+```
+
 ```python ,no_run
 import json
 
 from seekstorm_client_py import (
+    PySeekStormClient as SeekStormClient,
     ApikeyQuotaObject,
     CreateIndexRequest,
     GetDocumentRequest,
-    PySeekStormClient as SeekStormClient,
     SearchRequestObject,
 )
 
