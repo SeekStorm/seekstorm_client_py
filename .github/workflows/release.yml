@@ -125,7 +125,7 @@ jobs:
     name: Release to PyPI
     runs-on: ubuntu-latest
     if: "github.event_name == 'release' && github.event.action == 'published'"
-    needs: [linux_x86_64, windows, macos_x86_64, sdist]
+    needs: [linux_x86_64, windows, sdist]
     permissions:
       id-token: write # Required for secure trusted publishing if configured
       contents: read
