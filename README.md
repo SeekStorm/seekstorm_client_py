@@ -6,7 +6,7 @@ seekstorm_client_py is open source licensed under the [Apache License 2.0](https
 
 ## SeekStorm REST client (Python)
 [![PyPI](https://img.shields.io/pypi/v/seekstorm-client-py?label=PyPI)](https://pypi.org/project/seekstorm-client-py/)
-[![Downloads](https://shields.io)](https://pypi.org/project/seekstorm-client-py/)
+[![Downloads](https://img.shields.io/endpoint?url=https://api.pepy.tech/api/projects/seekstorm-client-py)](https://pepy.tech/project/seekstorm-client-py)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/SeekStorm/seekstorm_client_py?tab=Apache-2.0-1-ov-file#readme)
 
 ## SeekStorm REST client (Rust)
