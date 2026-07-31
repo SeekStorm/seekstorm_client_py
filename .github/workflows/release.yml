@@ -128,8 +128,8 @@ jobs:
   release:
     name: Release to PyPI
     runs-on: ubuntu-latest
-    environment: 'pypi' # Fixt den Parser-Fehler
-    # Der Job startet, sobald die stabilen Jobs durch sind UND die optionalen Jobs beendet sind (egal ob Erfolg oder Fehlschlag)
+    environment: 'pypi'
+    # the job starts once the stable jobs are done AND the optional jobs are finished (regardless of success or failure)
     needs: [linux_x86_64, linux_aarch64, windows, macos_x86_64, macos_aarch64, sdist]
     if: |
       always() &&
