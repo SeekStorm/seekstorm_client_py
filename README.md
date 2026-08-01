@@ -2,6 +2,8 @@
 <img src="assets/logo.png" width="450" alt="Logo"><br>
 **Python client** for the **SeekStorm vector & lexical search server**.
 
+The Python client is based on the [Rust client](https://github.com/SeekStorm/SeekStorm) via [PyO3](https://github.com/pyo3/pyo3) and [Maturin](https://github.com/pyo3/maturin) and supports the following platforms: linux_x86_64, linux_aarch64, windows, macos_x86_64, macos_aarch64.
+
 seekstorm_client_py is open source licensed under the [Apache License 2.0](https://github.com/SeekStorm/seekstorm_client_py?tab=Apache-2.0-1-ov-file#readme)
 
 ## SeekStorm REST client (Python)
