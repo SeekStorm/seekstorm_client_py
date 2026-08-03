@@ -15,6 +15,11 @@ seekstorm_client_py is open source licensed under the [Apache License 2.0](https
 [![GitHub Stars](https://img.shields.io/github/stars/SeekStorm/seekstorm_client_pure_py)](https://github.com/SeekStorm/seekstorm_client_pure_py)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/SeekStorm/seekstorm_client_pure_py?tab=Apache-2.0-1-ov-file#readme)
 
+## SeekStorm REST client (C#)
+[![NuGet version](https://badge.fury.io/nu/symspell.svg)](https://badge.fury.io/nu/seekstorm_client_cs)
+[![GitHub Stars](https://img.shields.io/github/stars/SeekStorm/seekstorm_client_cs)](https://github.com/SeekStorm/seekstorm_client_cs)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/SeekStorm/seekstorm_client_cs?tab=Apache-2.0-1-ov-file#readme)
+
 ## SeekStorm REST client (Rust)
 [![Crates.io](https://img.shields.io/crates/v/seekstorm_client_rs.svg)](https://crates.io/crates/seekstorm_client_rs)
 [![Downloads](https://img.shields.io/crates/d/seekstorm_client_rs.svg?style=flat-square)](https://crates.io/crates/seekstorm_client_rs)
