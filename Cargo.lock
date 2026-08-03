@@ -2461,9 +2461,9 @@ dependencies = [
 
 [[package]]
 name = "seekstorm"
-version = "3.3.2"
+version = "3.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "13c4a3087fad654d2aabb458e357075e9bed2e331e0c37e9df6fd23dfdd7a67d"
+checksum = "1c9565293596e2ee3838fa2df616da035c7bfb7d87322e2487d89eb3594fa189"
 dependencies = [
  "ahash",
  "aho-corasick",
@@ -2518,7 +2518,7 @@ dependencies = [
 
 [[package]]
 name = "seekstorm_client_py"
-version = "0.1.5"
+version = "0.1.6"
 dependencies = [
  "pyo3",
  "seekstorm_client_rs",
@@ -2528,9 +2528,9 @@ dependencies = [
 
 [[package]]
 name = "seekstorm_client_rs"
-version = "3.3.2"
+version = "3.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "348fdd241d897b8c953b624fdd95e43c4a7d051421ba72d539259b904f7452f3"
+checksum = "da36307d0c53df5394ae10de6a08c51990c751036765a8c64030dbc26571cf04"
 dependencies = [
  "base64 0.23.0",
  "chrono",

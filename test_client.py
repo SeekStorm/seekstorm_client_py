@@ -1,4 +1,6 @@
 # Make sure you start the SeekStorm server before running these tests!
+# maturin develop
+# python -m unittest -v test_client.py
 
 import json
 import unittest
@@ -163,6 +165,42 @@ class TestSeekStormClient(unittest.TestCase):
         raw_response = self.client.get_document(BASE_URL, DEMO_API_KEY, index_id, 0, request)
         documents = json.loads(raw_response)
         self.assertEqual(len(documents), 1)
+
+    def test_26_clear_index(self):
+        schema_json = """
+        [{"field":"title","field_type":"Text","store":false,"index_lexical":false},
+        {"field":"body","field_type":"Text","store":true,"index_lexical":true,"longest":true},
+        {"field":"url","field_type":"Text","store":false,"index_lexical":false}]
+        """
+
+        create_request = CreateIndexRequest()
+        create_request.index_name = f"test_index_{self._testMethodName}"
+        create_request.similarity = "Bm25f"
+        create_request.tokenizer = "UnicodeAlphanumeric"
+        create_request.stemmer = "None"
+        create_request.document_compression = "Snappy"
+        create_request.schema = schema_json
+        create_request.ngram_indexing = 0
+        index_id = self.client.create_index(BASE_URL, DEMO_API_KEY, create_request)
+
+        self.client.index_document(BASE_URL, DEMO_API_KEY, index_id, json.dumps({"title": "title3", "body": "body3 test", "url": "url3"}))
+        self.client.commit_index(BASE_URL, DEMO_API_KEY, index_id)
+
+        request = SearchRequestObject("+body3 +test")
+        request.offset = 0
+        request.length = 10
+        request.enable_empty_query = False
+        request.realtime = False
+
+        before_clear = self.client.query_index(BASE_URL, DEMO_API_KEY, index_id, request)
+        self.assertEqual(before_clear.count_total, 1)
+
+        raw_response = self.client.clear_index(BASE_URL, DEMO_API_KEY, index_id)
+
+        self.assertEqual(raw_response, 0)
+
+        after_clear = self.client.query_index(BASE_URL, DEMO_API_KEY, index_id, request)
+        self.assertEqual(after_clear.count_total, 0)
 
 
 if __name__ == "__main__":

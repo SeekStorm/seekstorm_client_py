@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "seekstorm-client-py"
-version = "0.1.5"
+version = "0.1.6"
 description = "Python bindings for the SeekStorm REST client"
 authors = [
     {name = "Wolf Garbe", email = "wolf.garbe@seekstorm.com"}
