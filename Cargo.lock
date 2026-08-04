@@ -2522,6 +2522,7 @@ version = "0.1.6"
 dependencies = [
  "pyo3",
  "seekstorm_client_rs",
+ "serde",
  "serde_json",
  "tokio",
 ]

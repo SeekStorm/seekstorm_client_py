@@ -203,5 +203,68 @@ class TestSeekStormClient(unittest.TestCase):
         self.assertEqual(after_clear.count_total, 0)
 
 
+class TestWrapperParity(unittest.TestCase):
+    def test_search_request_advanced_fields_roundtrip(self):
+        request = SearchRequestObject("test")
+
+        request.query_vector = "[0.1, 0.2, 0.3]"
+        self.assertEqual(json.loads(request.query_vector), [0.1, 0.2, 0.3])
+
+        request.result_type = "TopkCount"
+        self.assertEqual(request.result_type, "TopkCount")
+
+        request.field_filter = ["title", "body"]
+        self.assertEqual(request.field_filter, ["title", "body"])
+
+        request.fields = ["title"]
+        self.assertEqual(request.fields, ["title"])
+
+        request.highlights = "[]"
+        self.assertEqual(json.loads(request.highlights), [])
+
+        request.distance_fields = "[]"
+        self.assertEqual(json.loads(request.distance_fields), [])
+
+        request.query_facets = "[]"
+        self.assertEqual(json.loads(request.query_facets), [])
+
+        request.facet_filter = "[]"
+        self.assertEqual(json.loads(request.facet_filter), [])
+
+        request.result_sort = "[]"
+        self.assertEqual(json.loads(request.result_sort), [])
+
+        request.query_type_default = "Intersection"
+        self.assertEqual(request.query_type_default, "Intersection")
+
+        request.query_rewriting = request.query_rewriting
+        self.assertEqual(json.loads(request.query_rewriting), json.loads(request.query_rewriting))
+
+        request.search_mode = request.search_mode
+        self.assertEqual(json.loads(request.search_mode), json.loads(request.search_mode))
+
+    def test_get_document_request_advanced_fields_roundtrip(self):
+        request = GetDocumentRequest()
+        request.highlights = "[]"
+        request.distance_fields = "[]"
+
+        self.assertEqual(json.loads(request.highlights), [])
+        self.assertEqual(json.loads(request.distance_fields), [])
+
+    def test_create_index_request_advanced_fields_roundtrip(self):
+        request = CreateIndexRequest()
+
+        # Safe round-trip for enum-like and nested configuration fields.
+        request.stop_words = request.stop_words
+        request.frequent_words = request.frequent_words
+        request.synonyms = "[]"
+        request.spelling_correction = request.spelling_correction
+        request.query_completion = request.query_completion
+        request.clustering = request.clustering
+        request.inference = request.inference
+
+        self.assertEqual(json.loads(request.synonyms), [])
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
