@@ -1,6 +1,6 @@
 [package]
 name = "seekstorm_client_py"
-version = "0.1.6"
+version = "0.1.7"
 authors = ["Wolf Garbe <wolf.garbe@seekstorm.com>"]
 license = "Apache-2.0"
 categories = ["database-implementations", "data-structures"]
@@ -17,7 +17,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 # PyO3 bindings
-pyo3 = { version = "0.29.0", features = ["extension-module", "experimental-async"] }
+pyo3 = { version = "0.29.1", features = ["extension-module", "experimental-async"] }
 
 # Link the native seekstorm_client crate
 seekstorm_client_rs =  { version = "3.3.3" } # , path = "../../seekstorm_rust_shard/seekstorm_client" 
